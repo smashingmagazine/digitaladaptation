@@ -1,0 +1,273 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/-_Ctzj9b56b8RgXW8FArib3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/cIFypx4yrWPDz3zOxk7hIQLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/JbtMzqLaYbbbCL9X6EvaI73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+}
+html,
+body,
+div,
+iframe,
+h1,
+h2,
+h3,
+p,
+abbr,
+del,
+em,
+strong,
+ol,
+ul,
+li,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+footer,
+header,
+nav,
+section,
+main,
+img,
+video {
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+  background: transparent;
+}
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+body {
+  overflow: hidden;
+}
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+a {
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  background: transparent;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+a:link {
+  -webkit-tap-highlight-color: rgba(229, 59, 44, 0.4);
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title] {
+  cursor: help;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ul {
+  list-style-type: none;
+}
+ol {
+  list-style-type: decimal;
+}
+section ul {
+  list-style-type: disc;
+}
+td,
+td img {
+  vertical-align: top;
+}
+button {
+  cursor: pointer;
+  margin: 0;
+  width: auto;
+  overflow: visible;
+}
+img {
+  max-width: 100%;
+  border: none;
+}
+::-moz-selection {
+  background: #333;
+  color: #fff;
+}
+::selection {
+  background: #333;
+  color: #fff;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+body {
+  font-family: "Raleway", "Helvetica Neue", Calibri, "Droid Sans", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+strong,
+th,
+section a,
+.main-nav {
+  font-family: 'Raleway', "Helvetica Neue", Calibri, "Droid Sans", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.preamble h2,
+.preamble h3 {
+  font-family: 'Raleway', "Helvetica Neue", Calibri, "Droid Sans", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+.hide-text {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+.fixedsticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 10;
+}
+.fixedsticky-withoutfixedfixed .fixedsticky-off,
+.fixed-supported .fixedsticky-off {
+  position: static;
+}
+.fixedsticky-withoutfixedfixed .fixedsticky-on,
+.fixed-supported .fixedsticky-on {
+  position: fixed;
+}
+.fixedsticky-dummy {
+  display: none;
+}
+.fixedsticky-on + .fixedsticky-dummy {
+  display: block;
+}
+html {
+  background: #fff;
+  color: #797979;
+}
+header {
+  background: url(../images/header-pattern.png) repeat-x 0 0, #007a80;
+  padding: 1.618em 0;
+  width: 100%;
+}
+header h1 {
+  text-align: center;
+  margin: 0 auto 0.618em;
+}
+nav li {
+  float: left;
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: .9;
+}
+nav li a:link,
+nav li a:visited {
+  color: #a8d9de;
+}
+nav li a:hover,
+nav li a:focus,
+nav li a:active {
+  color: #fff;
+}
+.preamble {
+  background: #00b1bb;
+  text-align: center;
+}
+.preamble h1 {
+  padding: 1.618em 1.618em 1em;
+}
+.preamble h2 {
+  font-size: 1.125em;
+  color: #006d73;
+  margin: 0 1.618em 1em;
+}
+.preamble h3 {
+  color: #fff;
+  margin: 0 1.618em 2em;
+}
+.video {
+  background: #007a80;
+}
+.video .video-container {
+  width: 100%;
+}
+.video .video-container:hover {
+  cursor: pointer;
+}
+main {
+  background: #fff;
+}
+main h2 {
+  color: #9fdade;
+}
+main h3 {
+  color: #acc17c;
+}

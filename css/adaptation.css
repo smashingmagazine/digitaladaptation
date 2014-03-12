@@ -146,7 +146,8 @@ body,
 .preamble h3,
 .illustration-right a,
 .illustration-left a,
-ol span {
+ol span,
+td p {
   font-family: "Raleway", "Helvetica Neue", Calibri, "Droid Sans", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -161,7 +162,10 @@ section a,
 .price,
 button,
 ol,
-td:first-child {
+td:first-child,
+tr:hover,
+.summary,
+.keywords {
   font-family: 'Raleway', "Helvetica Neue", Calibri, "Droid Sans", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -248,6 +252,10 @@ nav li a:hover,
 nav li a:focus,
 nav li a:active {
   color: #eff4f5;
+}
+.the-book,
+.resources {
+  padding-top: 8em;
 }
 .preamble {
   background: #00b1bb;
@@ -357,9 +365,14 @@ main a:active {
   top: 1em;
   padding-top: 73.058252427184%;
 }
-.the-book,
-.resources {
-  padding-top: 8.125em;
+.paul {
+  background-image: url(../images/paul-boag.png);
+  width: 134px;
+  float: left;
+  margin-bottom: 1.618em;
+}
+.paul span {
+  padding-top: 100%;
 }
 .buy-it-now {
   text-align: center;
@@ -405,11 +418,6 @@ button {
   -webkit-transition: all ease .3s;
   transition: all ease .3s;
 }
-button:hover {
-  top: -1px;
-  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.5);
-}
 button:active {
   top: 1px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -428,31 +436,119 @@ ol li span {
 ol li strong {
   color: #454545;
 }
-.table-of-contents {
+.table-of-contents,
+td p,
+th:first-child {
   text-align: left;
 }
-.table-of-contents td,
-.table-of-contents th {
+td,
+th {
   padding: .5em;
   border-bottom: .08em solid #d9ecee;
 }
-.table-of-contents th {
+th {
   text-transform: uppercase;
   color: #94c2c8;
 }
-.table-of-contents td:first-child {
+tr,
+td:first-child,
+.arrow {
+  -webkit-transition: all ease .3s;
+  transition: all ease .3s;
+}
+td:first-child,
+th:first-child {
+  padding-left: 0;
+}
+td:first-child {
   color: #454545;
 }
-.table-of-contents td:last-child {
-  width: 0px;
-  height: 0px;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid rgba(0, 0, 0, 0.4);
-  top: 0.6em;
-  margin: 0px auto;
-}
-.table-of-contents th:last-child,
-.table-of-contents td:last-child {
+th:last-child,
+td:last-child {
   text-align: center;
+}
+.arrow {
+  position: relative;
+  top: 0.5em;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 6px solid #b3d9de;
+}
+.odd:hover {
+  color: #00b0ba;
+  background: #f0f7f8;
+  cursor: pointer;
+}
+.odd:hover td:first-child {
+  color: #00b0ba;
+}
+.odd:hover .arrow {
+  border-top: 6px solid #00b0ba;
+}
+thead tr:hover {
+  background: transparent;
+}
+td p {
+  font-size: .875em;
+  margin-bottom: 1.618em;
+}
+.summary,
+.keywords {
+  text-transform: uppercase;
+}
+.summary {
+  color: #ff742f;
+}
+.keywords {
+  color: #007a80;
+}
+.technical-details ul {
+  padding-left: 1em;
+  color: #b3d9de;
+}
+.technical-details ul li {
+  margin-bottom: 0.5em;
+}
+.technical-details ul li span {
+  color: #787878;
+}
+.resources ul {
+  list-style-type: none;
+}
+.resources ul li {
+  padding: 0.618em;
+  border-top: .08em solid #d9ecee;
+  color: #4bafbb;
+  -webkit-transition: all ease .3s;
+  transition: all ease .3s;
+}
+.resources ul li:last-child {
+  border-bottom: .08em solid #d9ecee;
+}
+.resources ul li:hover {
+  background-color: #f0f7f8;
+}
+footer {
+  background: url(../images/footer-pattern.png) repeat-x 0 100%, #00b0ba;
+  padding: 1.618em 0;
+}
+footer li {
+  display: block;
+  text-align: center;
+  padding: 0.618em 0.618em 1em;
+}
+footer li a:link,
+footer li a:visited {
+  color: #82e8ef;
+  padding-bottom: .08em;
+  border-bottom: .08em solid transparent;
+}
+footer li a:hover,
+footer li a:focus,
+footer li a:active {
+  color: #fff;
+  border-bottom: .08em solid #66d0d6;
 }

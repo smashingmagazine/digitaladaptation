@@ -330,7 +330,7 @@ nav .logo-li {
   width: 100%;
   height: 0;
   overflow: hidden;
-  z-index: 9;
+  z-index: 8;
 }
 .behave .thumb {
   visibility: hidden;
@@ -343,7 +343,7 @@ nav .logo-li {
   right: 0;
   height: 100%;
   width: 100%;
-  z-index: 8;
+  z-index: 9;
 }
 .behave .circle {
   position: absolute;
@@ -356,6 +356,7 @@ nav .logo-li {
   background-position: center center;
   -webkit-background-size: cover;
   background-size: cover;
+  z-index: 9;
 }
 .behave .circle:hover {
   cursor: pointer;
@@ -627,6 +628,9 @@ footer li a:active {
   color: #fff;
   border-bottom: .08em solid #66d0d6;
 }
+/*
+	More spacing for the Typographic Title and font-size increased for preamble headings
+*/
 @media screen and (min-width: 29.9375em) {
   .preamble {
     padding-top: 1.618em;
@@ -643,6 +647,12 @@ footer li a:active {
     padding-right: 1.618em;
   }
 }
+/*
+	Floating the illustrations
+	Bringing the clouds-background-image to the preamble
+	Buy-Buttons next to each other
+	Footer List-Items floated to the left
+*/
 @media screen and (min-width: 34.375em) {
   .preamble {
     background: url(../images/cloud-left.png) no-repeat 0 15%, url(../images/cloudy-right.png) no-repeat 100% 20%, #00b1bb;
@@ -650,9 +660,17 @@ footer li a:active {
   .preamble h2 {
     margin-top: 0.618em;
   }
-  .juggle {
+  .juggle,
+  .book-front {
     float: right;
     margin: -1em 0 3.236em 1em;
+  }
+  .book-front {
+    width: 40%;
+    margin-top: 1em;
+  }
+  .book-front span {
+    padding-top: 100%;
   }
   .buy-it-now {
     margin-bottom: 3.236em;
@@ -704,14 +722,48 @@ footer li a:active {
     background: url(../images/meeting-and-graph.png) no-repeat 90% bottom, url(../images/cloud-left.png) no-repeat 0 15%, url(../images/cloudy-right.png) no-repeat 100% 20%, url(../images/cubes-right.png) no-repeat 140% 130%, url(../images/cubes-left.png) no-repeat -40% 130%, #00b1bb;
   }
   .preamble h1 {
-    width: 61.8%;
+    width: 50%;
+  }
+  .preamble h2,
+  .preamble h3 {
+    font-size: 1.5em;
   }
   .preamble h2 {
-    font-size: 1.5em;
     width: 45.5%;
     margin: 1em 1.618em;
   }
   .behave .circle {
-    background: url(../images/video-bg-920.jpg) no-repeat center center;
+    background: url(../images/video-bg-920px.jpg) no-repeat center center;
+  }
+  .clouds-lines-dots {
+    float: left;
+    width: 50%;
+    margin: 2em 1em 0 0;
+  }
+}
+@media screen and (min-width: 57.5em) {
+  .fixedsticky ul,
+  .preamble,
+  main {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .preamble {
+    background: url(../images/meeting-and-graph.png) no-repeat 80% bottom, url(../images/red-tube-right-top.png) no-repeat 100% bottom, url(../images/cloud-left.png) no-repeat 0 15%, url(../images/cloudy-right.png) no-repeat 100% 20%, url(../images/cubes-right.png) no-repeat 100% 130%, url(../images/cubes-left.png) no-repeat 0% 130%, url(../images/green-tube-left-top.png) no-repeat 0 bottom, #00b1bb;
+  }
+  .video {
+    background: url(../images/red-tube-right-below.png) no-repeat 100% 0, url(../images/green-tube-left-bottom.png) no-repeat 44px 0, #007a80;
+  }
+  .behave {
+    position: relative;
+    padding-bottom: 0;
+    width: 920px;
+    height: 518px;
+    margin: 0 auto;
+    z-index: 9;
+  }
+  .behave iframe {
+    width: 920px;
+    height: 518px;
   }
 }

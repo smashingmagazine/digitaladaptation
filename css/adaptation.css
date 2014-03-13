@@ -249,6 +249,16 @@ header h1 {
   -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
+.fixedsticky-on:hover .logo-li,
+.fixedsticky-on:focus .logo-li,
+.fixedsticky-on:active .logo-li {
+  top: 0;
+  height: auto;
+  opacity: 1;
+}
+nav ul {
+  overflow: hidden;
+}
 nav li {
   float: left;
   display: inline-block;
@@ -264,6 +274,17 @@ nav li a:hover,
 nav li a:focus,
 nav li a:active {
   color: #eff4f5;
+}
+nav .logo-li {
+  display: block;
+  position: relative;
+  top: -50px;
+  height: 0;
+  margin: 0 auto 0.618em;
+  float: none;
+  opacity: 0;
+  -webkit-transition: all ease .3s;
+  transition: all ease .3s;
 }
 .the-book,
 .resources {
@@ -349,7 +370,7 @@ main a:active {
 }
 .illustration-right,
 .illustration-left {
-  margin: 1em 1em 3.236em;
+  margin: 1em auto 3.236em;
   text-align: center;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -390,7 +411,7 @@ main a:active {
   background-image: url(../images/paul-boag.png);
   width: 134px;
   float: left;
-  margin-bottom: 1.618em;
+  margin: 1em 1em 1em 0;
 }
 .paul span {
   padding-top: 100%;
@@ -574,6 +595,13 @@ footer li a:active {
   border-bottom: .08em solid #66d0d6;
 }
 @media screen and (min-width: 29.9375em) {
+  .preamble {
+    padding-top: 1.618em;
+  }
+  .preamble h2,
+  .preamble h3 {
+    font-size: 1.35em;
+  }
   .behave {
     padding: 0;
     margin: 0 auto;
@@ -583,5 +611,9 @@ footer li a:active {
   iframe {
     width: 480px;
     height: 270px;
+  }
+  main {
+    padding-left: 1.618em;
+    padding-right: 1.618em;
   }
 }

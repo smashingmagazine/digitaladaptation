@@ -215,27 +215,39 @@ html {
   background: #fff;
   color: #787878;
 }
-.fixedsticky {
+header {
   background: url(../images/header-pattern.png) repeat-x 0 0, #0a7a84;
-  padding: 1.618em 0;
+  padding: 1.618em 0 0;
   width: 100%;
   top: 0;
   -webkit-transition: background ease .3s;
   transition: background ease .3s;
 }
-.fixedsticky h1 {
+header h1 {
   text-align: center;
-  margin: 0 auto 0.618em;
+  margin: 0 auto;
   max-width: 9.375em;
+}
+.fixedsticky {
+  background: #0a7a84;
+  width: 100%;
+  padding: 1em 0;
+  top: 0;
 }
 .fixedsticky-on {
   background: rgba(10, 122, 132, 0.75);
   z-index: 9;
+  top: 0;
+  -webkit-transition: padding ease .3s;
+  transition: padding ease .3s;
 }
 .fixedsticky-on:hover,
 .fixedsticky-on:focus,
 .fixedsticky-on:active {
+  padding-top: 1.618em;
   background: #097983;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 nav li {
   float: left;
@@ -255,14 +267,14 @@ nav li a:active {
 }
 .the-book,
 .resources {
-  padding-top: 8em;
+  padding-top: 5em;
 }
 .preamble {
   background: #00b1bb;
   text-align: center;
 }
 .preamble h1 {
-  padding: 1.618em 1.618em 1em;
+  padding: 2.427em 1.618em 1em;
 }
 .preamble h2 {
   font-size: 1.125em;
@@ -276,24 +288,33 @@ nav li a:active {
 .video {
   background: #007a80;
 }
-.video .video-container,
-.video iframe {
-  width: 100%;
-  height: auto;
+.behave {
   position: relative;
+  padding-bottom: 56.25%;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+.behave iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
   z-index: 8;
 }
-.video .video-container:hover,
-.video iframe:hover {
-  cursor: pointer;
-}
-.video .circle {
+.behave .circle {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   background: url(../images/video-button.png) no-repeat center center;
+}
+.behave .circle:hover {
+  cursor: pointer;
 }
 main {
   background: #fff;
@@ -551,4 +572,16 @@ footer li a:focus,
 footer li a:active {
   color: #fff;
   border-bottom: .08em solid #66d0d6;
+}
+@media screen and (min-width: 29.9375em) {
+  .behave {
+    padding: 0;
+    margin: 0 auto;
+    width: 480px;
+    height: 270px;
+  }
+  iframe {
+    width: 480px;
+    height: 270px;
+  }
 }

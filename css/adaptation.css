@@ -215,6 +215,10 @@ html {
   background: #fff;
   color: #787878;
 }
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 header {
   background: url(../images/header-pattern.png) repeat-x 0 0, #0a7a84;
   padding: 1.618em 0 0;
@@ -226,7 +230,7 @@ header {
 header h1 {
   text-align: center;
   margin: 0 auto;
-  max-width: 9.375em;
+  max-width: 12.5em;
 }
 .fixedsticky {
   background: #0a7a84;
@@ -235,11 +239,15 @@ header h1 {
   top: 0;
 }
 .fixedsticky-on {
+  width: 100%;
+  max-width: 1200px;
   background: rgba(10, 122, 132, 0.75);
-  z-index: 9;
+  z-index: 8;
   top: 0;
-  -webkit-transition: padding ease .3s;
-  transition: padding ease .3s;
+  margin-top: 0;
+  padding-top: 1em;
+  -webkit-transition: padding-top ease 0.3s;
+  transition: padding-top ease 0.3s;
 }
 .fixedsticky-on:hover,
 .fixedsticky-on:focus,
@@ -248,13 +256,17 @@ header h1 {
   background: #097983;
   -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  -webkit-transition: padding-top ease 0.6s;
+  transition: padding-top ease 0.6s;
 }
 .fixedsticky-on:hover .logo-li,
 .fixedsticky-on:focus .logo-li,
 .fixedsticky-on:active .logo-li {
   top: 0;
-  height: auto;
+  height: 100%;
   opacity: 1;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 nav ul {
   overflow: hidden;
@@ -277,14 +289,15 @@ nav li a:active {
 }
 nav .logo-li {
   display: block;
+  max-width: 12.5em;
+  height: 0;
+  margin: 0 auto 1em;
   position: relative;
   top: -50px;
-  height: 0;
-  margin: 0 auto 0.618em;
   float: none;
   opacity: 0;
-  -webkit-transition: all ease .3s;
-  transition: all ease .3s;
+  -webkit-transition: all ease .6s;
+  transition: all ease .6s;
 }
 .the-book,
 .resources {
@@ -293,6 +306,7 @@ nav .logo-li {
 .preamble {
   background: #00b1bb;
   text-align: center;
+  padding-bottom: 0.5em;
 }
 .preamble h1 {
   padding: 2.427em 1.618em 1em;
@@ -308,6 +322,7 @@ nav .logo-li {
 }
 .video {
   background: #007a80;
+  z-index: 9;
 }
 .behave {
   position: relative;
@@ -315,6 +330,10 @@ nav .logo-li {
   width: 100%;
   height: 0;
   overflow: hidden;
+  z-index: 9;
+}
+.behave .thumb {
+  visibility: hidden;
 }
 .behave iframe {
   position: absolute;
@@ -332,7 +351,11 @@ nav .logo-li {
   height: 100%;
   top: 0;
   left: 0;
-  background: url(../images/video-button.png) no-repeat center center;
+  background-image: url(../images/video-bg-small.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 .behave .circle:hover {
   cursor: pointer;
@@ -397,6 +420,13 @@ main a:active {
 }
 .clouds-lines-dots span {
   padding-top: 52.222222222222%;
+}
+.book-front {
+  background-image: url(../images/book-front.png);
+  max-width: 433px;
+}
+.book-front span {
+  padding-top: 74.271012006861%;
 }
 .inside-the-book {
   background-image: url(../images/inside-the-book.png);
@@ -477,6 +507,9 @@ ol li span {
 }
 ol li strong {
   color: #454545;
+}
+.table-of-contents {
+  width: 100%;
 }
 .table-of-contents,
 td p,
@@ -602,18 +635,83 @@ footer li a:active {
   .preamble h3 {
     font-size: 1.35em;
   }
-  .behave {
-    padding: 0;
-    margin: 0 auto;
-    width: 480px;
-    height: 270px;
-  }
-  iframe {
-    width: 480px;
-    height: 270px;
+  .behave .circle {
+    background: url(../images/video-bg-700.png) no-repeat center center;
   }
   main {
     padding-left: 1.618em;
     padding-right: 1.618em;
+  }
+}
+@media screen and (min-width: 34.375em) {
+  .preamble {
+    background: url(../images/cloud-left.png) no-repeat 0 15%, url(../images/cloudy-right.png) no-repeat 100% 20%, #00b1bb;
+  }
+  .preamble h2 {
+    margin-top: 0.618em;
+  }
+  .juggle {
+    float: right;
+    margin: -1em 0 3.236em 1em;
+  }
+  .buy-it-now {
+    margin-bottom: 3.236em;
+  }
+  .shopping-button {
+    float: left;
+    width: 45%;
+    margin: 0 2.5%;
+  }
+  .single-buy .shopping-button {
+    float: none;
+    margin: 1.618em auto;
+  }
+  footer li {
+    float: left;
+    width: 33%;
+    padding: 1em 0 1.618em;
+  }
+}
+@media screen and (min-width: 43.75em) {
+  header img {
+    display: none;
+  }
+  nav {
+    margin-top: -1em;
+  }
+  nav ul {
+    overflow: visible;
+  }
+  nav li {
+    width: 10.5em;
+  }
+  nav .logo-li {
+    display: block;
+    max-width: 10.5em;
+    height: auto;
+    margin: -0.85em 0 0 1.618em;
+    position: static;
+    float: left;
+    opacity: 1;
+  }
+  .fixedsticky-on {
+    margin-top: 0;
+    padding-top: 1.618em;
+  }
+  .preamble {
+    text-align: left;
+    padding: 0 2.5% 0.5em;
+    background: url(../images/meeting-and-graph.png) no-repeat 90% bottom, url(../images/cloud-left.png) no-repeat 0 15%, url(../images/cloudy-right.png) no-repeat 100% 20%, url(../images/cubes-right.png) no-repeat 140% 130%, url(../images/cubes-left.png) no-repeat -40% 130%, #00b1bb;
+  }
+  .preamble h1 {
+    width: 61.8%;
+  }
+  .preamble h2 {
+    font-size: 1.5em;
+    width: 45.5%;
+    margin: 1em 1.618em;
+  }
+  .behave .circle {
+    background: url(../images/video-bg-920.jpg) no-repeat center center;
   }
 }

@@ -300,7 +300,8 @@ nav .logo-li {
   transition: all ease .6s;
 }
 .the-book,
-.resources {
+.resources,
+.manifesto {
   padding-top: 5em;
 }
 .preamble {
@@ -347,10 +348,10 @@ nav .logo-li {
 }
 .behave .circle {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url(../images/video-bg-small.png);
   background-repeat: no-repeat;
   background-position: center center;
@@ -392,6 +393,10 @@ main a:active {
   color: #00b0ba;
   border-bottom: 0.08em solid #00b0ba;
 }
+main h2,
+main h3 {
+  text-transform: uppercase;
+}
 .illustration-right,
 .illustration-left {
   margin: 1em auto 3.236em;
@@ -427,7 +432,7 @@ main a:active {
   max-width: 433px;
 }
 .book-front span {
-  padding-top: 74.271012006861%;
+  padding-top: 100%;
 }
 .inside-the-book {
   background-image: url(../images/inside-the-book.png);
@@ -437,6 +442,9 @@ main a:active {
   visibility: hidden;
   top: 1em;
   padding-top: 73.058252427184%;
+}
+.book-pages {
+  display: none;
 }
 .paul {
   background-image: url(../images/paul-boag.png);
@@ -481,10 +489,10 @@ button {
   position: relative;
   top: 0;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   background: -webkit-gradient(linear, left top, left bottom, from(#ff853b), to(#ff5f20));
   background: -webkit-linear-gradient(top, #ff853b, #ff5f20);
   background: linear-gradient(to bottom, #ff853b, #ff5f20);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), inset 0 0 0 transparent;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), inset 0 0 0 transparent;
   border-radius: 50px;
@@ -497,7 +505,7 @@ button:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 ol {
-  padding-left: 2em;
+  padding: 1.618em 0 1.618em 2em;
   color: #454545;
 }
 ol li {
@@ -582,6 +590,7 @@ td p {
   color: #007a80;
 }
 .technical-details ul {
+  font-size: 1.125em;
   padding-left: 1em;
   color: #b3d9de;
 }
@@ -606,6 +615,9 @@ td p {
 }
 .resources ul li:hover {
   background-color: #f0f7f8;
+}
+.introduction-video .behave .circle {
+  background-image: url(../images/intro-video-bg.jpg);
 }
 footer {
   background: url(../images/footer-pattern.png) repeat-x 0 100%, #00b0ba;
@@ -640,7 +652,7 @@ footer li a:active {
     font-size: 1.35em;
   }
   .behave .circle {
-    background: url(../images/video-bg-700.png) no-repeat center center;
+    background-image: url(../images/video-bg-700.png);
   }
   main {
     padding-left: 1.618em;
@@ -692,7 +704,8 @@ footer li a:active {
 }
 @media screen and (min-width: 43.75em) {
   header img {
-    display: none;
+    visibility: hidden;
+    height: 0;
   }
   nav {
     margin-top: -1em;
@@ -718,35 +731,53 @@ footer li a:active {
   }
   .preamble {
     text-align: left;
-    padding: 0 2.5% 0.5em;
+    padding: 0 7% 0.5em;
     background: url(../images/meeting-and-graph.png) no-repeat 90% bottom, url(../images/cloud-left.png) no-repeat 0 15%, url(../images/cloudy-right.png) no-repeat 100% 20%, url(../images/cubes-right.png) no-repeat 140% 130%, url(../images/cubes-left.png) no-repeat -40% 130%, #00b1bb;
   }
   .preamble h1 {
     width: 50%;
+    padding-left: 0;
   }
   .preamble h2,
   .preamble h3 {
     font-size: 1.5em;
+    margin-left: 0;
   }
   .preamble h2 {
     width: 45.5%;
-    margin: 1em 1.618em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  main {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+  .dots {
+    margin-left: 0;
   }
   .behave .circle {
-    background: url(../images/video-bg-920px.jpg) no-repeat center center;
+    background-image: url(../images/video-bg-920px.jpg);
   }
   .clouds-lines-dots {
-    float: left;
+    float: right;
     width: 50%;
-    margin: 2em 1em 0 0;
+    margin: 3.236em 0 1em 1em;
+  }
+  ol {
+    font-size: 1.125em;
   }
 }
 @media screen and (min-width: 57.5em) {
-  .fixedsticky ul,
   .preamble,
+  nav .logo-li {
+    padding-left: 11.666666666667%;
+  }
   main {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 11.666666666667%;
+    padding-right: 11.666666666667%;
+  }
+  nav .logo-li {
+    margin: -0.85em 5% 0 0;
   }
   .preamble {
     background: url(../images/meeting-and-graph.png) no-repeat 80% bottom, url(../images/red-tube-right-top.png) no-repeat 100% bottom, url(../images/cloud-left.png) no-repeat 0 15%, url(../images/cloudy-right.png) no-repeat 100% 20%, url(../images/cubes-right.png) no-repeat 100% 130%, url(../images/cubes-left.png) no-repeat 0% 130%, url(../images/green-tube-left-top.png) no-repeat 0 bottom, #00b1bb;
@@ -765,5 +796,50 @@ footer li a:active {
   .behave iframe {
     width: 920px;
     height: 518px;
+  }
+  ol {
+    float: right;
+    padding-left: 0;
+    width: 55%;
+  }
+  .inside-the-book {
+    float: left;
+    width: 40%;
+    margin: 1.618em 2% 0 0;
+  }
+  .inside-the-book span {
+    visibility: visible;
+  }
+  .table-of-contents {
+    float: left;
+    width: 70%;
+  }
+  .book-pages {
+    display: block;
+    float: right;
+    width: 30%;
+    max-width: 362px;
+    background-image: url(../images/cover.jpg);
+  }
+  .book-pages span {
+    padding-top: 100%;
+  }
+}
+@media screen and (min-width: 68.75em) {
+  .manifesto h2 {
+    width: 101%;
+  }
+  .buy-it-now {
+    margin-top: 3.25em;
+  }
+  .shopping-button {
+    width: 30%;
+    margin: 0;
+  }
+  .shopping-button:first-child {
+    margin-left: 20%;
+  }
+  .single-buy .shopping-button {
+    margin: 0 auto;
   }
 }

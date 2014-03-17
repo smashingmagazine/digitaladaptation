@@ -500,6 +500,9 @@ button:hover {
   -webkit-box-shadow: 0 0.125em 0.1875em rgba(0, 0, 0, 0.2), inset 0 0 0.41666667em rgba(255, 255, 255, 0.5);
   box-shadow: 0 0.125em 0.1875em rgba(0, 0, 0, 0.2), inset 0 0 0.41666667em rgba(255, 255, 255, 0.5);
 }
+button:focus {
+  outline: 0;
+}
 button:active {
   top: .08em;
   -webkit-box-shadow: 0 0.08em 0.125em rgba(0, 0, 0, 0.2), inset 0 0 1.25em rgba(255, 255, 255, 0.5);
@@ -800,7 +803,7 @@ footer li a:active {
     background: url(../images/meeting-and-graph.png) no-repeat 80% bottom, url(../images/red-tube-right-top.png) no-repeat 100% bottom, url(../images/cloud-left.png) no-repeat 0 15%, url(../images/cloudy-right.png) no-repeat 100% 20%, url(../images/cubes-right.png) no-repeat 100% 130%, url(../images/cubes-left.png) no-repeat 0% 130%, url(../images/green-tube-left-top.png) no-repeat 0 bottom, #00b1bb;
   }
   .video {
-    background: url(../images/red-pipe-below.png) no-repeat 100% 0, url(../images/green-tube-left-bottom.png) no-repeat 2.75em 0, #007a80;
+    background: url(../images/red-pipeline-down.png) no-repeat 100% 0, url(../images/green-tube-left-bottom.png) no-repeat 2.75em 0, #007a80;
   }
   .behave {
     position: relative;

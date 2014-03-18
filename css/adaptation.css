@@ -606,7 +606,8 @@ td p {
   list-style-type: none;
 }
 .resources ul li {
-  padding: 0.618em;
+  padding: 1em;
+  line-height: 1.75em;
   border-top: .08em solid #d9ecee;
   color: #4bafbb;
   -webkit-transition: all ease .3s;

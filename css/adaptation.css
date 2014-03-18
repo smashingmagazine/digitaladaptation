@@ -630,10 +630,6 @@ td p {
 }
 .introduction-video .behave .circle {
   background-image: url(../images/intro-video-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-background-size: cover;
-  background-size: cover;
 }
 footer {
   background: url(../images/footer-pattern.png) repeat-x 0 100%, #00b0ba;

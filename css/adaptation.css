@@ -841,6 +841,11 @@ footer li a:active {
   .book-pages span {
     padding-top: 100%;
   }
+  .bottom-o-the-page {
+    margin-bottom: 0;
+    padding-bottom: 3.236em;
+    background: url(../images/meeting-footer.png) no-repeat 0% bottom, url(../images/handshake-footer.png) no-repeat 100% bottom;
+  }
 }
 @media screen and (min-width: 68.75em) {
   .manifesto h2 {

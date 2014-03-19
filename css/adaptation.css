@@ -163,7 +163,6 @@ section a,
 button,
 ol,
 td:first-child,
-tr:hover,
 .summary,
 .keywords {
   font-family: 'Raleway', "Helvetica Neue", Calibri, "Droid Sans", Helvetica, Arial, sans-serif;
@@ -214,16 +213,14 @@ tr:hover,
 html {
   background: #fff;
   color: #787878;
-}
-body {
-  margin: 0 auto;
+  text-shadow: 0 .08em 0 transparent;
 }
 header h1,
 nav li,
 .preamble,
 .buy-it-now,
-.illustration-right,
-.illustration-left,
+.illu-right,
+.illu-left,
 th:last-child,
 td:last-child,
 footer li {
@@ -245,8 +242,8 @@ th,
 nav .logo-li,
 .behave,
 button,
-.illustration-left span,
-.illustration-right span,
+.illu-left span,
+.illu-right span,
 .price span,
 .arrow {
   position: relative;
@@ -258,7 +255,7 @@ button,
 }
 header {
   background: url(../images/header-pattern.png) repeat-x 0 0, #0a7a84;
-  padding: 1.618em 0 0;
+  padding-top: 1.618em;
 }
 header h1 {
   margin: 0 auto;
@@ -266,17 +263,15 @@ header h1 {
 }
 .fixedsticky {
   background: #0a7a84;
-  width: 100%;
   padding: 1em 0;
   top: 0;
 }
 .fixedsticky-on {
   width: 100%;
   top: 0;
-  margin-top: 0;
   padding-top: 1em;
   background: rgba(10, 122, 132, 0.75);
-  z-index: 8;
+  z-index: 7;
   -webkit-transition: padding-top ease 0.3s;
   transition: padding-top ease 0.3s;
 }
@@ -300,7 +295,6 @@ header h1 {
   transition: all ease 0.3s;
 }
 nav li {
-  display: inline-block;
   float: left;
   width: 33%;
 }
@@ -316,8 +310,8 @@ nav a:active {
 nav .logo-li {
   display: block;
   max-width: 12.5em;
-  height: 0;
   margin: 0 auto 1em;
+  height: 0;
   top: -3.125em;
   float: none;
   opacity: 0;
@@ -326,19 +320,22 @@ nav .logo-li {
 }
 .preamble {
   background: #00b1bb;
-  padding-bottom: 0.5em;
+  padding: 0 1.618em 0.5em;
+}
+.preamble h1,
+.preamble h2,
+.preamble h3 {
+  padding-bottom: 1em;
 }
 .preamble h1 {
-  padding: 2.427em 1.618em 1em;
+  padding-top: 2.427em;
 }
 .preamble h2 {
   font-size: 1.125em;
   color: #006d73;
-  margin: 0 1.618em 1em;
 }
 .preamble h3 {
   color: #fff;
-  margin: 0 1.618em 2em;
 }
 .video {
   background: #007a80;
@@ -348,28 +345,16 @@ nav .logo-li {
   padding-bottom: 56.25%;
   width: 100%;
   height: 0;
-  overflow: hidden;
-  z-index: 8;
 }
-.behave .thumb {
-  visibility: hidden;
-}
+.behave .circle,
 .behave iframe {
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
   width: 100%;
-  z-index: 9;
+  height: 100%;
 }
 .behave .circle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-image: url(../images/video-bg-small.png);
   background-repeat: no-repeat;
   background-position: center center;
@@ -381,7 +366,7 @@ nav .logo-li {
   cursor: pointer;
 }
 main {
-  padding: 1em 1em 0;
+  padding: 1em;
 }
 main h2 {
   font-size: 3em;
@@ -396,7 +381,7 @@ main h3 {
 main p {
   font-size: 1.25em;
   line-height: 1.51em;
-  margin: 0.5em 0;
+  margin: 1em 0;
 }
 main a:link,
 main a:visited {
@@ -408,18 +393,18 @@ main a:hover,
 main a:focus,
 main a:active {
   color: #00b0ba;
-  border-bottom: 0.08em solid #00b0ba;
+  border-bottom-color: #00b0ba;
 }
-.illustration-right,
-.illustration-left {
+.illu-right,
+.illu-left {
   margin: 1em auto 3.236em;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   -webkit-background-size: contain;
   background-size: contain;
 }
-.illustration-right span,
-.illustration-left span {
+.illu-right span,
+.illu-left span {
   display: block;
   color: #9a9a9a;
 }
@@ -431,19 +416,12 @@ main a:active {
   top: 2em;
   padding-top: 100%;
 }
-.clouds-lines-dots {
-  background-image: url(../images/clouds-lines-dots.png);
-  max-width: 28.125em;
-}
-.clouds-lines-dots span {
-  padding-top: 52.222222222222%;
-}
 .book-front {
   background-image: url(../images/book-front.png);
   max-width: 27.0625em;
 }
 .book-front span {
-  padding-top: 100%;
+  padding-top: 120%;
 }
 .inside-the-book {
   background-image: url(../images/inside-the-book.png);
@@ -452,6 +430,9 @@ main a:active {
 .inside-the-book span {
   top: 1em;
   padding-top: 73.058252427184%;
+}
+.book-pages {
+  display: none;
 }
 .paul {
   float: left;
@@ -494,10 +475,10 @@ button {
   background: -webkit-gradient(linear, left top, left bottom, from(#ff853b), to(#ff5f20));
   background: -webkit-linear-gradient(top, #ff853b, #ff5f20);
   background: linear-gradient(to bottom, #ff853b, #ff5f20);
-  text-shadow: 0 0.08em 0.125em rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0.08em 0.08em rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0 0.125em 0.1875em rgba(0, 0, 0, 0.2), inset 0 0 0 transparent;
   box-shadow: 0 0.125em 0.1875em rgba(0, 0, 0, 0.2), inset 0 0 0 transparent;
-  border-radius: 2.08333333333333em;
+  border-radius: 1.25em;
   -webkit-transition: all ease .3s;
   transition: all ease .3s;
 }
@@ -522,11 +503,11 @@ button:active {
   background: linear-gradient(to bottom, #4bafbb, #00b0ba);
 }
 ol {
-  padding: 1.618em 0 1.618em 2em;
+  padding: 1em;
   color: #454545;
 }
 ol li {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 ol li span {
   color: #787878;
@@ -534,12 +515,9 @@ ol li span {
 ol li strong {
   color: #454545;
 }
-.table-of-contents {
-  width: 100%;
-}
 td,
 th {
-  padding: .5em;
+  padding: 0.5em;
   border-bottom: .08em solid #d9ecee;
 }
 th {
@@ -589,15 +567,18 @@ td p {
   color: #ff742f;
 }
 .keywords {
-  color: #007a80;
+  color: #4bafbb;
+}
+.author p {
+  padding-bottom: 1em;
 }
 .technical-details ul {
   font-size: 1.125em;
-  padding-left: 1em;
+  padding: 0 1em;
   color: #b3d9de;
 }
 .technical-details ul li {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 .technical-details ul li span {
   color: #787878;
@@ -628,7 +609,7 @@ footer {
 }
 footer li {
   display: block;
-  padding: 0.618em 0.618em 1em;
+  padding: 1em;
 }
 footer li a:link,
 footer li a:visited {
@@ -646,9 +627,6 @@ footer li a:active {
 	More spacing for the Typographic Title and font-size increased for preamble headings
 */
 @media screen and (min-width: 29.9375em) {
-  .preamble {
-    padding-top: 1.618em;
-  }
   .preamble h2,
   .preamble h3 {
     font-size: 1.35em;
@@ -657,8 +635,7 @@ footer li a:active {
     background-image: url(../images/video-bg-700.png);
   }
   main {
-    padding-left: 1.618em;
-    padding-right: 1.618em;
+    padding: 1.618em;
   }
 }
 /*
@@ -674,17 +651,14 @@ footer li a:active {
   .preamble h2 {
     margin-top: 0.618em;
   }
-  .juggle,
-  .book-front {
+  .juggle {
     float: right;
     margin: -1em 0 3.236em 1em;
   }
   .book-front {
-    width: 40%;
+    float: right;
+    width: 45%;
     margin-top: 1em;
-  }
-  .book-front span {
-    padding-top: 100%;
   }
   .buy-it-now {
     margin-bottom: 3.236em;
@@ -698,6 +672,9 @@ footer li a:active {
     float: none;
     width: 100%;
     margin: 1.618em auto;
+  }
+  .table-of-contents {
+    width: 100%;
   }
   .resources ul {
     max-width: 31.25em;
@@ -716,15 +693,10 @@ footer li a:active {
   nav {
     margin-top: -1em;
   }
-  nav ul {
-    overflow: visible;
-  }
   nav li {
     width: 10.5em;
   }
   nav .logo-li {
-    display: block;
-    max-width: 10.5em;
     height: auto;
     margin: -0.85em 0 0 1.618em;
     position: static;
@@ -737,40 +709,25 @@ footer li a:active {
   }
   .preamble {
     text-align: left;
-    padding: 0 7% 0.5em;
-    background: url(../images/meeting-and-graph.png) no-repeat 90% bottom, url(../images/cloud-left.png) no-repeat 0 15%, url(../images/cloudy-right.png) no-repeat 100% 20%, url(../images/cubes-right.png) no-repeat 140% 130%, url(../images/cubes-left.png) no-repeat -40% 130%, #00b1bb;
+    padding: 0 7%;
+    background: url(../images/meeting-and-graph.png) no-repeat 92% bottom, url(../images/cloud-left.png) no-repeat 0 19.1%, url(../images/cloudy-right.png) no-repeat 100% 10%, url(../images/cubes-right.png) no-repeat 140% 130%, url(../images/cubes-left.png) no-repeat -40% 130%, #00b1bb;
   }
-  .preamble h1 {
+  .preamble h1,
+  .preamble h2 {
     width: 50%;
-    padding-left: 0;
   }
   .preamble h2,
   .preamble h3 {
     font-size: 1.5em;
-    margin-left: 0;
-  }
-  .preamble h2 {
-    width: 45.5%;
-    margin-top: 1em;
-    margin-bottom: 1em;
   }
   main {
-    padding-left: 7%;
-    padding-right: 7%;
+    padding: 1.618em 7%;
   }
   .behave .circle {
     background-image: url(../images/video-bg-920px.jpg);
   }
-  .clouds-lines-dots {
-    float: right;
-    width: 50%;
-    margin: 3.236em 0 1em 1em;
-  }
   ol {
     font-size: 1.125em;
-  }
-  .table-of-contents {
-    max-width: 43.75em;
   }
 }
 @media screen and (min-width: 57.5em) {
@@ -779,8 +736,7 @@ footer li a:active {
     padding-left: 11.666666666667%;
   }
   main {
-    padding-left: 11.666666666667%;
-    padding-right: 11.666666666667%;
+    padding: 1.618em 11.66666667%;
   }
   nav .logo-li {
     margin: -0.85em 5% 0 0;
@@ -803,15 +759,21 @@ footer li a:active {
     width: 920px;
     height: 518px;
   }
+  .introduction-video .behave {
+    width: 100%;
+  }
+  .the-book .buy-it-now {
+    background: url(../images/clouds-buy-left.png) no-repeat 0 0, url(../images/clouds-buy-right.png) no-repeat 100% 0;
+  }
   ol {
     float: right;
-    padding-left: 0;
-    width: 55%;
+    padding: 1em 0 0 5%;
+    width: 50%;
   }
   .inside-the-book {
     float: left;
     width: 40%;
-    margin: 1.618em 2% 0 0;
+    margin: 1.618em 5% 0 0;
   }
   .table-of-contents {
     float: left;
@@ -828,18 +790,12 @@ footer li a:active {
     padding-top: 100%;
   }
   .bottom-o-the-page {
-    margin-bottom: 0;
+    margin-bottom: -1.618em;
     padding-bottom: 3.236em;
     background: url(../images/meeting-footer.png) no-repeat 0% bottom, url(../images/handshake-footer.png) no-repeat 100% bottom;
   }
-  .the-book .buy-it-now {
-    background: url(../images/clouds-buy-left.png) no-repeat 0 0, url(../images/clouds-buy-right.png) no-repeat 100% 0;
-  }
 }
 @media screen and (min-width: 68.75em) {
-  .manifesto h2 {
-    width: 101%;
-  }
   .buy-it-now {
     margin-top: 3.25em;
   }
@@ -861,6 +817,9 @@ footer li a:active {
   .preamble h1 {
     padding-top: 4.854em;
   }
+  main h2 {
+    width: 101%;
+  }
   .cubes-background {
     background-image: url(../images/cubes-details.png);
     background-repeat: no-repeat;
@@ -871,11 +830,15 @@ footer li a:active {
   .technical-details {
     padding-bottom: 1.618em;
   }
+  .book-front span {
+    padding-top: 100%;
+  }
+  .introduction-video .behave {
+    width: 920px;
+    margin-left: 0;
+  }
 }
 @media screen and (min-width: 78.125em) {
-  .preamble h1 {
-    padding-top: 3.236em;
-  }
   .manifesto-download .shopping-button {
     width: 16.5625em;
     margin-left: 0;
@@ -892,7 +855,7 @@ footer li a:active {
     width: 61.8%;
   }
   .book-pages {
-    width: 38%;
+    width: 38.2%;
   }
 }
 @media screen and (min-width: 97.1875em) {
@@ -900,13 +863,11 @@ footer li a:active {
   footer ul {
     font-size: 1.25em;
   }
-  .preamble h2 {
-    font-size: 2em;
-    margin: 0 0 .5em;
+  .preamble h1 {
+    padding-top: 3.236em;
   }
-  .preamble h3 {
-    font-size: 2em;
-  }
+  .preamble h2,
+  .preamble h3,
   main h3 {
     font-size: 2em;
   }
@@ -930,8 +891,5 @@ footer li a:active {
   }
   .author p {
     margin-top: 1em;
-  }
-  .introduction-video .behave {
-    margin-left: 0;
   }
 }
